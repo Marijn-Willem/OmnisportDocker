@@ -1,2 +1,4 @@
 .idea
 OmnisportDocker.iml
+Postgres/Omnisport.sql
+Tomcat/Sources
