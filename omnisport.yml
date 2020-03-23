@@ -1,0 +1,12 @@
+version: "2.0"
+services:
+ omnisportdb:
+  image: omnisportdb
+  ports:
+   - "5432:5432"
+ omnisportweb:
+  image: omnisportweb
+  depends_on:
+   - omnisportdb
+  ports:
+   - "8080:8080"
