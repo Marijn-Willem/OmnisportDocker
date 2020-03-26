@@ -1,11 +1,11 @@
 version: "2.0"
 services:
  omnisportdb:
-  image: omnisportdb
+  image: mwdf/omnisportdb
   ports:
    - "5432:5432"
  omnisportweb:
-  image: omnisportweb
+  image: mwdf/omnisportweb
   depends_on:
    - omnisportdb
   environment:
