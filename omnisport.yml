@@ -12,7 +12,7 @@ services:
    - OMNISPORT_DBCONN=omnisportdocker_omnisportdb_1:5432/omnisport
    - OMNISPORT_DBUSER=postgres
    - OMNISPORT_DBPW=postgres
-   - OMNISPORT_APIURL=omnisportdocker_omnisportweb_1:8080/api
+   - OMNISPORT_APIURL=http://omnisportdocker_omnisportweb_1:8080/api
    - OMNISPORT_APICLIENT=Marijn-Willem
    - OMNISPORT_APIPW=M2U
    - OMNISPORT_FILELOC=/usr/tmp
