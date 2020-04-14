@@ -2,17 +2,19 @@ version: "2.0"
 services:
  omnisportdb:
   image: mwdf/omnisportdb
+  container_name: omnisportdb
   ports:
    - "5432:5432"
  omnisportweb:
   image: mwdf/omnisportweb
+  container_name: omnisportweb
   depends_on:
    - omnisportdb
   environment:
-   - OMNISPORT_DBCONN=omnisportdocker_omnisportdb_1:5432/omnisport
+   - OMNISPORT_DBCONN=omnisportdb:5432/omnisport
    - OMNISPORT_DBUSER=postgres
    - OMNISPORT_DBPW=postgres
-   - OMNISPORT_APIURL=http://192.168.99.100:8080/api
+   - OMNISPORT_APIURL=http://omnisportweb:8080/api
    - OMNISPORT_APICLIENT=Marijn-Willem
    - OMNISPORT_APIPW=M2U
    - OMNISPORT_FILELOC=/usr/tmp
