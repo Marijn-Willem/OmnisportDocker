@@ -22,6 +22,8 @@ WORKDIR /tmp/sources/Alias
 RUN mvn install
 WORKDIR /tmp/sources/api
 RUN mvn install
+WORKDIR /tmp/sources/CyclingRoad
+RUN mvn install
 WORKDIR /tmp/sources/Darts
 RUN mvn install
 WORKDIR /tmp/sources/H2HSports
@@ -41,6 +43,7 @@ COPY ImportFiles/Teamsport /usr/tmp/Teamsport
 COPY --from=MAVEN_IMAGE /tmp/sources/AlcifoSports/target/alcifosports*.war $CATALINA_HOME/webapps/alcifosports.war
 COPY --from=MAVEN_IMAGE /tmp/sources/Alias/target/alias*.war $CATALINA_HOME/webapps/alias.war
 COPY --from=MAVEN_IMAGE /tmp/sources/api/target/api*.war $CATALINA_HOME/webapps/api.war
+COPY --from=MAVEN_IMAGE /tmp/sources/CyclingRoad/target/cyclingroad*.war $CATALINA_HOME/webapps/cyclingroad.war
 COPY --from=MAVEN_IMAGE /tmp/sources/Darts/target/darts*.war $CATALINA_HOME/webapps/darts.war
 COPY --from=MAVEN_IMAGE /tmp/sources/H2HSports/target/h2hsports*.war $CATALINA_HOME/webapps/h2hsports.war
 COPY --from=MAVEN_IMAGE /tmp/sources/SpeedSkating/target/speedskating*.war $CATALINA_HOME/webapps/speedskating.war

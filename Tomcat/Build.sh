@@ -20,6 +20,7 @@ copySourceDir SportsServlet
 copySourceDir AlcifoSports
 copySourceDir Alias
 copySourceDir api
+copySourceDir CyclingRoad
 copySourceDir Darts
 copySourceDir H2HSports
 copySourceDir SpeedSkating
