@@ -29,10 +29,8 @@ copySourceDir TeamSports
 
 mkdir -p ImportFiles/Darts/PersonMatchImport
 mkdir -p ImportFiles/Speedskating/EventPersonImport
-mkdir -p ImportFiles/Teamsport
 ./CopyImportFiles.sh Darts/PersonMatchImport
 ./CopyImportFiles.sh Speedskating/EventPersonImport
-./CopyImportFiles.sh Teamsport
 
 ./LoginToDocker.sh
 docker build -t mwdf/omnisportweb .
