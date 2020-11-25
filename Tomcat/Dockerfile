@@ -38,6 +38,7 @@ RUN mvn install
 FROM tomcat
 COPY ImportFiles/Darts/PersonMatchImport /usr/tmp/Darts/PersonMatchImport
 COPY ImportFiles/Speedskating/EventPersonImport /usr/tmp/Speedskating/EventPersonImport
+COPY ImportFiles/Teamsport/TeamMatchAction /usr/tmp/Teamsport/TeamMatchAction
 
 COPY --from=MAVEN_IMAGE /tmp/sources/AlcifoSports/target/alcifosports*.war $CATALINA_HOME/webapps/alcifosports.war
 COPY --from=MAVEN_IMAGE /tmp/sources/Alias/target/alias*.war $CATALINA_HOME/webapps/alias.war
