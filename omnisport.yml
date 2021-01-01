@@ -4,7 +4,7 @@ services:
   image: mwdf/omnisportdb
   container_name: omnisportdb
   ports:
-   - "5432:5432"
+   - "5433:5432"
  omnisportweb:
   image: mwdf/omnisportweb
   container_name: omnisportweb
@@ -19,4 +19,4 @@ services:
    - OMNISPORT_APIPW=M2U
    - OMNISPORT_FILELOC=/usr/tmp
   ports:
-   - "8080:8080"
+   - "8081:8080"

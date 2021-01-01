@@ -38,5 +38,4 @@ docker build -t mwdf/omnisportweb .
 docker container prune -f
 docker images -q -f "dangling=true" | xargs docker rmi
 
-./LoginToDocker.sh
 docker push mwdf/omnisportweb
