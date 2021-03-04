@@ -34,8 +34,8 @@ mkdir -p ImportFiles/Teamsport/TeamMatchAction
 ./CopyImportFiles.sh Speedskating/EventPersonImport
 ./CopyImportFiles.sh Teamsport/TeamMatchAction
 
+docker ps -a -q -f "ancestor=mwdf/omnisportweb" | xargs docker container rm
 docker build -t mwdf/omnisportweb .
-docker container prune -f
 docker images -q -f "dangling=true" | xargs docker rmi
 
 docker push mwdf/omnisportweb
