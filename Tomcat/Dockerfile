@@ -10,6 +10,8 @@ WORKDIR /tmp/sources/ApiManagement
 RUN mvn install
 WORKDIR /tmp/sources/TeamCalc
 RUN mvn install
+WORKDIR /tmp/sources/CyclingRoadCalc
+RUN mvn install
 WORKDIR /tmp/sources/DartsCalc
 RUN mvn install
 WORKDIR /tmp/sources/SpeedSkatingCalc

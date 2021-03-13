@@ -14,6 +14,7 @@ copySourceDir AlcifoCalc
 copySourceDir H2HCalc
 copySourceDir ApiManagement
 copySourceDir TeamCalc
+copySourceDir CyclingRoadCalc
 copySourceDir DartsCalc
 copySourceDir SpeedSkatingCalc
 copySourceDir SportsServlet
