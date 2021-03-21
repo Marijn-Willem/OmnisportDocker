@@ -8,6 +8,8 @@ WORKDIR /tmp/sources/H2HCalc
 RUN mvn install
 WORKDIR /tmp/sources/ApiManagement
 RUN mvn install
+WORKDIR /tmp/sources/SportsWeb
+RUN mvn install
 WORKDIR /tmp/sources/TeamCalc
 RUN mvn install
 WORKDIR /tmp/sources/CyclingRoadCalc

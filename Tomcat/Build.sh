@@ -13,6 +13,7 @@ copySourceDir SportsGeneral
 copySourceDir AlcifoCalc
 copySourceDir H2HCalc
 copySourceDir ApiManagement
+copySourceDir SportsWeb
 copySourceDir TeamCalc
 copySourceDir CyclingRoadCalc
 copySourceDir DartsCalc
