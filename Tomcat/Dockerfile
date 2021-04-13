@@ -1,4 +1,4 @@
-FROM maven AS MAVEN_IMAGE
+FROM maven:3.8.1-jdk-11 AS MAVEN_IMAGE
 COPY Sources /tmp/sources
 WORKDIR /tmp/sources/SportsGeneral
 RUN mvn install
