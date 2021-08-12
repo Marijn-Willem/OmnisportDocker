@@ -2,7 +2,8 @@
 copySourceDir() {
 	BASEDIR=../../$1
 	mkdir -p Sources/$1/src/main
-	cp $BASEDIR/pom.xml Sources/$1
+	cp $BASEDIR/build.gradle Sources/$1
+	cp $BASEDIR/settings.gradle Sources/$1
 	cp -r $BASEDIR/src/main/* Sources/$1/src/main
 }
 
