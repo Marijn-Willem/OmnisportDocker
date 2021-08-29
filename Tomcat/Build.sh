@@ -10,6 +10,7 @@ copySourceDir() {
 rm -f -r Sources
 rm -f -r ImportFiles
 
+copySourceDir OmniSportBuild
 copySourceDir SportsGeneral
 copySourceDir AlcifoCalc
 copySourceDir H2HCalc

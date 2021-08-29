@@ -1,25 +1,5 @@
 FROM gradle:7.1.1-jdk16 AS GRADLE_IMAGE
 COPY Sources /tmp/sources
-WORKDIR /tmp/sources/SportsGeneral
-RUN gradle publish
-WORKDIR /tmp/sources/AlcifoCalc
-RUN gradle publish
-WORKDIR /tmp/sources/H2HCalc
-RUN gradle publish
-WORKDIR /tmp/sources/ApiManagement
-RUN gradle publish
-WORKDIR /tmp/sources/SportsWeb
-RUN gradle publish
-WORKDIR /tmp/sources/TeamCalc
-RUN gradle publish
-WORKDIR /tmp/sources/CyclingRoadCalc
-RUN gradle publish
-WORKDIR /tmp/sources/DartsCalc
-RUN gradle publish
-WORKDIR /tmp/sources/SpeedSkatingCalc
-RUN gradle publish
-WORKDIR /tmp/sources/SportsServlet
-RUN gradle publish
 WORKDIR /tmp/sources/AlcifoSports
 RUN gradle war
 WORKDIR /tmp/sources/Alias
