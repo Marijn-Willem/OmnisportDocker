@@ -14,12 +14,12 @@ copySourceDir OmniSportBuild
 copySourceDir SportsGeneral
 copySourceDir AlcifoCalc
 copySourceDir H2HCalc
-copySourceDir ApiManagement
 copySourceDir SportsWeb
 copySourceDir TeamCalc
 copySourceDir CyclingRoadCalc
 copySourceDir DartsCalc
 copySourceDir SpeedSkatingCalc
+copySourceDir CacheManagement
 copySourceDir SportsServlet
 copySourceDir AlcifoSports
 copySourceDir Alias
