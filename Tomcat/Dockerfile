@@ -19,7 +19,7 @@ RUN gradle war
 WORKDIR /tmp/sources/TeamSports
 RUN gradle war
 
-FROM tomcat:9.0.53-jdk16
+FROM tomcat:10.0-jdk16-temurin
 COPY ImportFiles/Darts/PersonMatchImport /usr/tmp/Darts/PersonMatchImport
 COPY ImportFiles/Speedskating/EventPersonImport /usr/tmp/Speedskating/EventPersonImport
 COPY ImportFiles/Teamsport/TeamMatchAction /usr/tmp/Teamsport/TeamMatchAction
