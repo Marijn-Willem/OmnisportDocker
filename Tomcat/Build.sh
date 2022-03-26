@@ -26,6 +26,7 @@ copySourceDir Alias
 copySourceDir api
 copySourceDir CyclingRoad
 copySourceDir Darts
+copySourceDir Flush
 copySourceDir H2HSports
 copySourceDir SpeedSkating
 copySourceDir SportsManagement
