@@ -1,0 +1,34 @@
+version: "2.0"
+services:
+ memcached:
+  image: memcached
+  container_name: memcached
+  ports:
+   - "11212:11211"
+ sqlserver:
+  image: mcr.microsoft.com/mssql/server
+  container_name: sqlserver
+  environment:
+   - ACCEPT_EULA=Y
+   - SA_PASSWORD=1234ABcd
+  ports:
+   - "1433:1433"
+ omnisportweb:
+  image: mwdf/omnisportweb
+  container_name: omnisportweb
+  depends_on:
+   - memcached
+   - sqlserver
+  environment:
+   - OMNISPORT_DBCONN=sqlserver:1433;database=omnisport
+   - OMNISPORT_DBUSER=sa
+   - OMNISPORT_DBPW=1234ABcd
+   - OMNISPORT_DBTYPE=sqlserver
+   - OMNISPORT_APIURL=http://omnisportweb:8080/api
+   - OMNISPORT_APICLIENT=Marijn-Willem
+   - OMNISPORT_APIPW=M2U
+   - OMNISPORT_FILELOC=/usr/tmp
+   - OMNISPORT_MEMHOST=memcached
+   - OMNISPORT_MEMPORT=11211
+  ports:
+   - "8081:8080"
