@@ -5,12 +5,9 @@ services:
   container_name: memcached
   ports:
    - "11212:11211"
- sqlserver:
-  image: mcr.microsoft.com/mssql/server
-  container_name: sqlserver
-  environment:
-   - ACCEPT_EULA=Y
-   - SA_PASSWORD=1234ABcd
+ omnisportdb:
+  image: mwdf/omnisportdb/sqlserver
+  container_name: omnisportdb
   ports:
    - "1433:1433"
  omnisportweb:
@@ -18,9 +15,9 @@ services:
   container_name: omnisportweb
   depends_on:
    - memcached
-   - sqlserver
+   - omnisportdb
   environment:
-   - OMNISPORT_DBCONN=sqlserver:1433;database=omnisport
+   - OMNISPORT_DBCONN=omnisportdb:1433;database=omnisport
    - OMNISPORT_DBUSER=sa
    - OMNISPORT_DBPW=1234ABcd
    - OMNISPORT_DBTYPE=sqlserver
