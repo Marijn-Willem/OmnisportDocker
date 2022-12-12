@@ -19,7 +19,7 @@ services:
   environment:
    - OMNISPORT_DBCONN=omnisportdb:1433;database=omnisport
    - OMNISPORT_DBUSER=sa
-   - OMNISPORT_DBPW=1234ABcd
+   - OMNISPORT_DBPW=!234ABcd
    - OMNISPORT_DBTYPE=sqlserver
    - OMNISPORT_APIURL=http://omnisportweb:8080/api
    - OMNISPORT_APICLIENT=Marijn-Willem
