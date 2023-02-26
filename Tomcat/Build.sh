@@ -1,6 +1,11 @@
 #!/bin/sh
 copySourceDir() {
 	BASEDIR=../../$1
+	
+	cd $BASEDIR
+	git checkout master
+	cd ../OmnisportDocker/Tomcat
+	
 	mkdir -p Sources/$1/src/main
 	cp $BASEDIR/build.gradle Sources/$1
 	cp $BASEDIR/settings.gradle Sources/$1
