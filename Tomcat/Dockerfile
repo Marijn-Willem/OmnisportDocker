@@ -1,4 +1,4 @@
-FROM gradle:7.1.1-jdk16 AS GRADLE_IMAGE
+FROM gradle:7.6.1-jdk17 AS GRADLE_IMAGE
 COPY Sources /tmp/sources
 WORKDIR /tmp/sources/AlcifoSports
 RUN gradle war
@@ -21,7 +21,7 @@ RUN gradle war
 WORKDIR /tmp/sources/TeamSports
 RUN gradle war
 
-FROM tomcat:10.0-jdk16-temurin
+FROM tomcat:10.1.7-jdk17-temurin
 COPY ImportFiles/Darts/PersonMatchImport /usr/tmp/Darts/PersonMatchImport
 COPY ImportFiles/Speedskating/EventPersonImport /usr/tmp/Speedskating/EventPersonImport
 COPY ImportFiles/Teamsport/TeamMatchAction /usr/tmp/Teamsport/TeamMatchAction
