@@ -1,4 +1,4 @@
-FROM gradle:7.6.1-jdk17 AS GRADLE_IMAGE
+FROM gradle:8.0.2-jdk17 AS GRADLE_IMAGE
 COPY Sources /tmp/sources
 WORKDIR /tmp/sources/AlcifoSports
 RUN gradle war
