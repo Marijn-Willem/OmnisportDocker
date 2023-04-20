@@ -1,40 +1,45 @@
 #!/bin/sh
+REPODIR=../../OmniSport
+
 copySourceDir() {
-	BASEDIR=../../$1
-	
-	cd $BASEDIR
-	git checkout master
-	cd ../OmnisportDocker/Tomcat
+	MODULEDIR=$REPODIR/$1
 	
 	mkdir -p Sources/$1/src/main
-	cp $BASEDIR/build.gradle Sources/$1
-	cp $BASEDIR/settings.gradle Sources/$1
-	cp -r $BASEDIR/src/main/* Sources/$1/src/main
+	cp $MODULEDIR/build.gradle Sources/$1
+	cp -r $MODULEDIR/src/main/* Sources/$1/src/main
 }
 
 rm -f -r Sources
 rm -f -r ImportFiles
 
-copySourceDir SportsGeneral
-copySourceDir AlcifoCalc
-copySourceDir H2HCalc
-copySourceDir SportsWeb
-copySourceDir TeamCalc
-copySourceDir CyclingRoadCalc
-copySourceDir DartsCalc
-copySourceDir SpeedSkatingCalc
-copySourceDir CacheManagement
-copySourceDir SportsServlet
-copySourceDir AlcifoSports
-copySourceDir Alias
+cd $REPODIR
+git checkout master
+cd ../OmnisportDocker/Tomcat
+
+mkdir -p Sources
+cp $REPODIR/settings.gradle Sources
+
+copySourceDir buildSrc
+copySourceDir general
+copySourceDir alcifocalc
+copySourceDir h2hcalc
+copySourceDir web
+copySourceDir teamcalc
+copySourceDir cyclingroadcalc
+copySourceDir dartscalc
+copySourceDir speedskatingcalc
+copySourceDir cachemanagement
+copySourceDir servlet
+copySourceDir alcifosports
+copySourceDir alias
 copySourceDir api
-copySourceDir CyclingRoad
-copySourceDir Darts
-copySourceDir Flush
-copySourceDir H2HSports
-copySourceDir SpeedSkating
-copySourceDir SportsManagement
-copySourceDir TeamSports
+copySourceDir cyclingroad
+copySourceDir darts
+copySourceDir flush
+copySourceDir h2hsports
+copySourceDir management
+copySourceDir speedskating
+copySourceDir teamsports
 
 mkdir -p ImportFiles/Darts/PersonMatchImport
 mkdir -p ImportFiles/Speedskating/EventPersonImport
