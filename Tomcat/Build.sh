@@ -20,26 +20,14 @@ mkdir -p Sources
 cp $REPODIR/settings.gradle Sources
 
 copySourceDir buildSrc
-copySourceDir general
-copySourceDir alcifocalc
-copySourceDir h2hcalc
-copySourceDir web
-copySourceDir teamcalc
-copySourceDir cyclingroadcalc
-copySourceDir dartscalc
-copySourceDir speedskatingcalc
-copySourceDir cachemanagement
-copySourceDir servlet
-copySourceDir alcifosports
-copySourceDir alias
-copySourceDir api
-copySourceDir cyclingroad
-copySourceDir darts
-copySourceDir flush
-copySourceDir h2hsports
-copySourceDir management
-copySourceDir speedskating
-copySourceDir teamsports
+
+for i in $(grep -E -o "'[a-z0-9]+'" Sources/settings.gradle)
+do
+	if [[ $i != "'omnisport'" ]]
+	then
+		copySourceDir ${i:1:-1}
+	fi
+done
 
 mkdir -p ImportFiles/Darts/PersonMatchImport
 mkdir -p ImportFiles/Speedskating/EventPersonImport
