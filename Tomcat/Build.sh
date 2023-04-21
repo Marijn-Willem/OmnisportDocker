@@ -4,9 +4,12 @@ REPODIR=../../OmniSport
 copySourceDir() {
 	MODULEDIR=$REPODIR/$1
 	
-	mkdir -p Sources/$1/src/main
-	cp $MODULEDIR/build.gradle Sources/$1
-	cp -r $MODULEDIR/src/main/* Sources/$1/src/main
+	if [[ -e $MODULEDIR ]]
+	then
+		mkdir -p Sources/$1/src/main
+		cp $MODULEDIR/build.gradle Sources/$1		
+		cp -r $MODULEDIR/src/main/* Sources/$1/src/main
+	fi
 }
 
 rm -f -r Sources
@@ -23,10 +26,7 @@ copySourceDir buildSrc
 
 for i in $(grep -E -o "'[a-z0-9]+'" Sources/settings.gradle)
 do
-	if [[ $i != "'omnisport'" ]]
-	then
-		copySourceDir ${i:1:-1}
-	fi
+	copySourceDir ${i:1:-1}
 done
 
 mkdir -p ImportFiles/Darts/PersonMatchImport
