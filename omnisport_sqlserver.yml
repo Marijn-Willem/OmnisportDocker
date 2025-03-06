@@ -5,7 +5,7 @@ services:
   ports:
    - "11212:11211"
  omnisportdbssrv:
-  image: mwdf/omnisportdb/sqlserver
+  image: mwdf/omnisportdb-sqlserver
   container_name: omnisportdbssrv
   ports:
    - "1433:1433"
