@@ -1,9 +1,4 @@
 services:
- memcached:
-  image: memcached:1.6.38
-  container_name: memcached
-  ports:
-   - "11212:11211"
  omnisportdb:
   image: mwdf/omnisportdb
   container_name: omnisportdb
@@ -13,7 +8,6 @@ services:
   image: mwdf/omnisportweb
   container_name: omnisportweb
   depends_on:
-   - memcached
    - omnisportdb
   environment:
    - OMNISPORT_DBCONN=omnisportdb:5432/omnisport
