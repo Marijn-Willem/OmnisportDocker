@@ -17,7 +17,5 @@ services:
    - OMNISPORT_APICLIENT=Marijn-Willem
    - OMNISPORT_APIPW=M2U
    - OMNISPORT_FILELOC=/usr/tmp
-   - OMNISPORT_MEMHOST=memcached
-   - OMNISPORT_MEMPORT=11211
   ports:
    - "8081:8080"
